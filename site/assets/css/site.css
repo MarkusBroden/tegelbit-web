@@ -1,0 +1,153 @@
+/* ==========================================================================
+   Lager 3: komponenter. Läser BARA semantiska tokens från tokens.css,
+   aldrig hex-värden eller primitiva tokens direkt.
+   ========================================================================== */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a { color: var(--color-accent-text); }
+a:hover { color: var(--color-text); }
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* --- Sidskal: en skärm, innehållet centrerat ----------------------------- */
+.page {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Partikelnätet ligger bakom allt */
+.bits {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.hero {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-24) var(--space-6) var(--space-12);
+}
+
+.hero__inner {
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 28px;
+}
+
+.mark { display: block; width: 120px; height: 120px; }
+
+/* Logga och text i samma rad, som i delningsbilden */
+.lockup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(12px, 2vw, 24px);
+}
+.mark--inline { width: clamp(64px, 8vw, 96px); height: clamp(64px, 8vw, 96px); }
+
+/* --- Ordmärke ------------------------------------------------------------- */
+.wordmark {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(56px, 9vw, 104px);
+  line-height: 0.95;
+  letter-spacing: -0.055em;
+}
+.wordmark__bit {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  letter-spacing: -0.07em;
+  color: var(--color-accent);
+}
+
+.name {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--color-text-muted);
+  text-wrap: balance;
+}
+
+/* --- Knappar -------------------------------------------------------------- */
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 0 24px;
+  border-radius: var(--radius-control);
+  border: 1px solid transparent;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: transform 120ms ease, background-color 120ms ease, border-color 120ms ease;
+}
+.button:hover { transform: translateY(-1px); }
+
+.button--primary {
+  background: var(--color-action);
+  color: var(--color-on-action);
+  font-family: var(--font-mono);
+}
+.button--primary:hover { color: var(--color-on-action); background: var(--color-accent); }
+
+.button--secondary {
+  background: var(--color-surface);
+  border-color: var(--color-border);
+  color: var(--color-text);
+}
+.button--secondary:hover { color: var(--color-text); border-color: var(--color-text-muted); }
+
+/* --- Sidfot --------------------------------------------------------------- */
+.footer {
+  position: relative;
+  padding: var(--space-6) var(--space-8);
+  display: flex;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+/* --- Rörelsekänslighet: respektera användarens systeminställning ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .button { transition: none; }
+  .button:hover { transform: none; }
+}

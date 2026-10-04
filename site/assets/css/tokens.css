@@ -1,0 +1,100 @@
+/* ==========================================================================
+   Tegelbit design tokens
+   Lager 1: primitiva tokens  – råvärden, namngivna efter vad de ÄR.
+   Lager 2: semantiska tokens – namngivna efter vad de GÖR. Ett tema byter
+            bara ut det här lagret. Komponenter (site.css) läser bara lager 2.
+   ========================================================================== */
+
+/* --- Typsnitt (självhostade, ingen trafik till tredje part) --------------- */
+@font-face {
+  font-family: "Geist";
+  src: url("../fonts/geist-latin.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Geist Mono";
+  src: url("../fonts/geist-mono-latin.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* --- Lager 1: primitiva ------------------------------------------------ */
+  --tegel-50:  #FCF1EE;
+  --tegel-100: #F8DCD4;
+  --tegel-200: #F0B6A6;
+  --tegel-300: #E58A72;
+  --tegel-400: #D65C42;
+  --tegel-500: #C2452B;
+  --tegel-600: #A33822;
+  --tegel-700: #842D1C;
+  --tegel-800: #632217;
+  --tegel-900: #43170F;
+
+  --bruk-0:   #FFFFFF;
+  --bruk-50:  #F7F6F4;
+  --bruk-100: #EFEEEB;
+  --bruk-200: #E4E2DE;
+  --bruk-300: #CBC8C3;
+  --bruk-400: #9A9792;
+  --bruk-500: #75726D;
+  --bruk-600: #5E5B57;
+  --bruk-700: #2E2C2A;
+  --bruk-800: #1F1E1C;
+  --bruk-900: #161514;
+  --bruk-950: #0E0E0D;
+
+  --font-sans: "Geist", "Helvetica Neue", Arial, sans-serif;
+  --font-monospace: "Geist Mono", ui-monospace, Menlo, Consolas, monospace;
+
+  --space-1: 4px;  --space-2: 8px;  --space-3: 12px; --space-4: 16px;
+  --space-6: 24px; --space-8: 32px; --space-12: 48px; --space-16: 64px;
+  --space-24: 96px;
+}
+
+/* --- Lager 2: semantiska tokens, tema "se" (ljust, standard) -------------- */
+:root,
+[data-theme="se"] {
+  --color-bg:           var(--bruk-50);
+  --color-surface:      var(--bruk-0);
+  --color-border:       var(--bruk-200);
+  --color-text:         var(--bruk-900);
+  --color-text-muted:   var(--bruk-600);
+  --color-action:       var(--bruk-900);
+  --color-on-action:    var(--bruk-0);
+  --color-accent:       var(--tegel-500);
+  --color-accent-text:  var(--tegel-600);
+  --color-inverse-bg:   var(--bruk-900);
+  --particle:           var(--bruk-300);
+  --particle-line:      var(--bruk-200);
+
+  --font-display: var(--font-sans);
+  --font-body:    var(--font-sans);
+  --font-mono:    var(--font-monospace);
+
+  --radius-control: 999px;
+  --radius-card:    16px;
+}
+
+/* --- Lager 2: tema "dev" (mörkt) – används av tegelbit.dev ---------------- */
+[data-theme="dev"] {
+  --color-bg:           var(--bruk-950);
+  --color-surface:      var(--bruk-900);
+  --color-border:       var(--bruk-700);
+  --color-text:         var(--bruk-100);
+  --color-text-muted:   var(--bruk-400);
+  --color-action:       var(--bruk-50);
+  --color-on-action:    var(--bruk-950);
+  --color-accent:       var(--tegel-400);
+  --color-accent-text:  var(--tegel-300);
+  --color-inverse-bg:   var(--bruk-800);
+  --particle:           var(--bruk-600);
+  --particle-line:      var(--bruk-700);
+
+  --font-display: var(--font-monospace);
+
+  --radius-card: 12px;
+}

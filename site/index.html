@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tegelbit · Markus Brodén</title>
+  <meta name="description" content="Tegelbit – Markus Brodén. Kontakt: markus@tegelbit.se">
+  <meta name="theme-color" content="#F7F6F4">
+  <link rel="canonical" href="https://tegelbit.se/">
+
+  <!-- Ikoner -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <!-- Förhandsvisning när länken delas (LinkedIn, Slack, iMessage …) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tegelbit.se/">
+  <meta property="og:title" content="Tegelbit · Markus Brodén">
+  <meta property="og:description" content="Kontakt: markus@tegelbit.se">
+  <meta property="og:image" content="https://tegelbit.se/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="sv_SE">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Typsnitt laddas tidigt så rubriken inte hoppar -->
+  <link rel="preload" href="/assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/geist-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Designsystemet: först tokens (värden), sedan komponenter (som läser dem) -->
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body data-theme="se">
+  <div class="page">
+    <canvas class="bits" aria-hidden="true"></canvas>
+
+    <main class="hero">
+      <div class="hero__inner">
+        <svg class="mark" viewBox="0 0 64 64" role="img" aria-label="Tegelbit">
+          <g transform="translate(-2 -1)">
+            <path d="M36 26 L52 14 L50 24 L53 31 L48 38 L32 48 L36 40 L31 33 Z" fill="#842D1C"/>
+            <path d="M8 26 L24 14 L52 14 L36 26 Z" fill="#E58A72"/>
+            <path d="M8 26 H36 L31 33 L36 40 L32 48 H8 Z" fill="#C2452B"/>
+            <rect x="52" y="38" width="6" height="6" fill="#C2452B"/>
+            <path d="M52 38 L55.5 35.4 L61.5 35.4 L58 38 Z" fill="#E58A72"/>
+            <path d="M58 38 L61.5 35.4 L61.5 41.4 L58 44 Z" fill="#842D1C"/>
+            <rect x="46" y="51" width="4" height="4" fill="#C2452B"/>
+            <path d="M46 51 L48.4 49.2 L52.4 49.2 L50 51 Z" fill="#E58A72"/>
+            <path d="M50 51 L52.4 49.2 L52.4 53.2 L50 55 Z" fill="#842D1C"/>
+          </g>
+        </svg>
+
+        <h1 class="wordmark">tegel<span class="wordmark__bit">bit</span></h1>
+        <p class="name">Markus Brodén</p>
+
+        <div class="actions">
+          <a class="button button--primary" href="mailto:markus@tegelbit.se">markus@tegelbit.se</a>
+          <a class="button button--secondary" href="https://www.linkedin.com/in/markusbroden/" rel="me noopener">LinkedIn</a>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <span>© 2026 Tegelbit · bit för bit</span>
+    </footer>
+  </div>
+
+  <script src="/assets/js/bits.js" defer></script>
+</body>
+</html>
